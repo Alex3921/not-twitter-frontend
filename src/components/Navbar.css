@@ -1,0 +1,15 @@
+/* We use !import to enforce the style over the mui's own styling */
+.navbar .navbar--tweet-btn {
+  background-color: var(--twitter-color);
+  border: none;
+  color: white;
+  font-weight: 900;
+  text-transform: inherit;
+  border-radius: 30px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.navbar .navbar--tweet-btn:hover {
+  background-color: #47a2db;
+}
