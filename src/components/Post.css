@@ -1,0 +1,27 @@
+.post {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.post__authorName {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.post__header .post__username {
+  font-size: 15px;
+  color: gray;
+}
+
+.post__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.post .post__badge {
+  color: var(--twitter-color);
+  font-size: 18px;
+}
