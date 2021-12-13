@@ -1,10 +1,17 @@
 import React from "react";
+import Navbar from "./components/Navbar";
+import Feed from "./components/Feed";
+import Widget from "./components/Widget";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>Alex</h1>
+      <Navbar />
+
+      <Feed />
+
+      <Widget />
     </div>
   );
 }
