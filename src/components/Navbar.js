@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 function Navbar() {
   return (
     <div className="navbar">
-      <TwitterIcon />
+      <TwitterIcon className="navbar__twitterIcon" />
       <NavbarOption active Icon={HomeOutlinedIcon} text="Home" />
       <NavbarOption Icon={NotificationsNoneOutlinedIcon} text="Notifications" />
       <NavbarOption Icon={MailOutlinedIcon} text="Messages" />
@@ -22,7 +22,7 @@ function Navbar() {
 
       <Button
         variant="outlined"
-        className="navbar--tweet-btn"
+        className="navbar__tweet-btn"
         fullWidth
       >
         Tweet
