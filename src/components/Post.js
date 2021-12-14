@@ -40,10 +40,18 @@ function Post({
           <p>I challenge you to build a Twitter Clone</p>
         </div>
         <div className="post__footer">
-          <ChatBubbleOutline fontSize="small" />
-          <Repeat fontSize="small" />
-          <FavoriteBorder fontSize="small" />
-          <Publish fontSize="small" />
+          <div className="element">
+            <ChatBubbleOutline fontSize="small" />
+          </div>
+          <div className="element">
+            <Repeat fontSize="small" />
+          </div>
+          <div className="element">
+            <FavoriteBorder fontSize="small" />
+          </div>
+          <div className="element">
+            <Publish fontSize="small" />
+          </div>
         </div>
       </div>
     </div>
