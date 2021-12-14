@@ -1,6 +1,5 @@
 .tweet {
-  padding-bottom: 10px;
-  padding-right: 10px;
+  padding: 0px 16px;
 }
 
 .tweet > form {
@@ -9,15 +8,18 @@
 }
 
 .tweet__input {
-  padding: 20px;
+  padding: 12px 0px;
   display: flex;
 }
 
 .tweet__input > input {
   flex: 1;
-  margin-left: 20px;
   font-size: 20px;
   border: none;
+}
+
+.tweet__input .tweet__avatar {
+  padding: 0px 12px;
 }
 
 .tweet .tweet__submit-btn {
@@ -29,7 +31,7 @@
   border-radius: 30px;
   width: 80px;
   height: 40px;
-  margin-top: 20px;
+  margin-top: 12px;
   margin-left: auto;
 }
 
