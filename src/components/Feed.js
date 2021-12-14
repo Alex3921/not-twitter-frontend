@@ -13,6 +13,10 @@ function Feed() {
       <Tweet />
 
       <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
     </div>
   );
 }
