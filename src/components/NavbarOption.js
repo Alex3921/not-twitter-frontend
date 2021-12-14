@@ -3,7 +3,7 @@ import "./NavbarOption.css";
 
 function NavbarOption({ active, text, Icon }) {
   return (
-    <div className={`navbarOption ${active && "navbarOption--active"}`}>
+    <div className={`navbarOption ${active && "navbarOption__active"}`}>
       <Icon sx={{ fontSize: 30 }} />
       <span>{text}</span>
     </div>
