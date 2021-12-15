@@ -22,7 +22,11 @@ function Widget() {
         <TwitterTweetEmbed
           tweetId={"1470372755384291331"}
         />
-
+        <TwitterTimelineEmbed
+          source="profile"
+          screenName="SpaceX"
+          options={{ height: 600 }}
+        />
       </div>
     </div>
   );
