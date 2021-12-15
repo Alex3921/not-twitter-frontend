@@ -1,6 +1,7 @@
 import React from "react";
 import "./Widget.css";
 
+import SearchIcon from "@mui/icons-material/Search";
 import {
   TwitterTimelineEmbed,
   TwitterShareButton,
@@ -9,8 +10,11 @@ import {
 
 function Widget() {
   return (
-    <div className="widget">
-      <div className="widgets__input"></div>
+    <div className="widgets">
+      <div className="widgets__search">
+        <SearchIcon className="widgets__searchIcon" />
+        <input placeholder="Search Twitter" type="text" />
+      </div>
     </div>
   );
 }
