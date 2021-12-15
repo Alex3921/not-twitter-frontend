@@ -21,3 +21,14 @@
   border-radius: 20px;
 }
 
+.widgets__search svg {
+  position: absolute;
+}
+
+.widgets__searchIcon {
+  padding: 5px;
+  color: red;
+  min-width: 50px;
+  text-align: center;
+}
+
