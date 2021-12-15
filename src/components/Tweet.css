@@ -16,6 +16,7 @@
   flex: 1;
   font-size: 20px;
   border: none;
+  outline: none;
 }
 
 .tweet__input .tweet__avatar {
