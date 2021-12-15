@@ -15,6 +15,15 @@ function Widget() {
         <SearchIcon className="widgets__searchIcon" />
         <input placeholder="Search Twitter" type="text" />
       </div>
+
+      <div className="widgets__widgetContainer">
+        <h2>What's happening?</h2>
+
+        <TwitterTweetEmbed
+          tweetId={"1470372755384291331"}
+        />
+
+      </div>
     </div>
   );
 }
