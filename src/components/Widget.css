@@ -32,3 +32,27 @@
   text-align: center;
 }
 
+/* .widgets__search > input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+} */
+
+.widgets__search > input {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+.widgets__search > input:focus {
+  border: 1px solid red;
+}
+
+
