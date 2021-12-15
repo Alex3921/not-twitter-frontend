@@ -67,4 +67,7 @@
   border-radius: 20px;
 }
 
-
+.widgets__widgetContainer > h2 {
+  font-size: 20px;
+  font-weight: 800;
+}
