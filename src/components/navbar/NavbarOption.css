@@ -1,0 +1,27 @@
+.navbarOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbarOption:hover {
+  background-color: #e6e3e3;
+  border-radius: 30px;
+  transition: color 100ms ease-out;
+}
+
+/* Mui adds a class of it's own to our icons. */
+/* With the following we are saying: inside of navbarOption
+if we find a child with class x add padding of 20 px. */
+.navbarOption > .MuiSvgIcon-root {
+  padding: 20px;
+}
+
+.navbarOption > span {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.navbarOption__active {
+  font-weight: 800;
+}
