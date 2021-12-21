@@ -1,0 +1,41 @@
+.tweet {
+  padding: 0px 16px;
+}
+
+.tweet > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet__input {
+  padding: 12px 0px;
+  display: flex;
+}
+
+.tweet__input > input {
+  flex: 1;
+  font-size: 20px;
+  border: none;
+  outline: none;
+}
+
+.tweet__input .tweet__avatar {
+  padding: 0px 12px;
+}
+
+.tweet .tweet__submit-btn {
+  background-color: var(--twitter-color);
+  border: none;
+  color: white;
+  font-weight: 900;
+  text-transform: inherit;
+  border-radius: 30px;
+  width: 80px;
+  height: 40px;
+  margin-top: 12px;
+  margin-left: auto;
+}
+
+.tweet .tweet__submit-btn:hover {
+  background-color: #47a2db;
+}
