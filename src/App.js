@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import Feed from "./components/Feed";
-import Widget from "./components/Widget";
+import Widget from "./components/widget/Widget";
 import "./App.css";
 
 function App() {
