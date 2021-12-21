@@ -1,6 +1,6 @@
 import React from "react";
-import Tweet from "./Tweet";
-import Post from "./Post";
+import Tweet from "./tweet/Tweet";
+import PostContainer from "../containers/PostContainer";
 import "./Feed.css";
 
 function Feed() {
@@ -12,11 +12,7 @@ function Feed() {
 
       <Tweet />
 
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      <PostContainer />
     </div>
   );
 }
