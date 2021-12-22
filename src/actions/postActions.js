@@ -2,7 +2,7 @@
 export const fetchPosts = () => {
   return (dispatch) => {
     dispatch({ type: "LOADING_POSTS" });
-    fetch("http://localhost:3000/posts")
+    fetch("http://localhost:3000/users/2/posts")
       .then((response) => response.json())
       .then((data) => dispatch({ type: "ADD_POSTS", posts: data }));
   };
