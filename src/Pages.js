@@ -1,16 +1,18 @@
 import React from "react";
-import {Switch, Route} from "react-router-dom";
+import {Switch, Route, Redirect} from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Feed from "./components/Feed";
-import Widgets from "./components/widget/Widget";
+import Widget from "./components/widget/Widget";
 
 
 export default function Pages() {
     return (
         <Switch>
-            <Route path="/">
+            <Route path="/" >
+                <Redirect to="/home" />
                 <Navbar />
-                <Widgets />
+                <Route exact path="/home"><Feed /></Route>
+                <Widget />
             </Route>
         </Switch>
     )
