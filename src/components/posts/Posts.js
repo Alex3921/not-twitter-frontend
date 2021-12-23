@@ -1,22 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import Post from "./Post";
-import { fetchPosts } from "../../actions/fetchPosts";
+import { fetchPosts } from "../../actions/postActions";
 
 class Posts extends Component {
   componentDidMount() {
-    debugger
     this.props.fetchPosts();
   }
 
+  renderPosts = () => {
+    return this.props.posts.map((post) => (
+      <div key={post.id} className="post">
+        <Post post={post} />
+      </div>
+    ));
+  };
+
   render() {
-    return (
-      <>
-        {this.props.posts.map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
-      </>
-    );
+    return <>{this.renderPosts()}</>;
   }
 }
 
