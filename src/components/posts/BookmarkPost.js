@@ -1,6 +1,6 @@
 import { Publish } from "@mui/icons-material";
 
-export const BookmarkPosts = () => {
+export const BookmarkPost = () => {
   return (
     <div className="element">
       <Publish fontSize="small" />
