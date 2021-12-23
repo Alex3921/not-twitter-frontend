@@ -1,10 +1,7 @@
 import React from "react";
 import "./Widget.css";
 
-import {
-  TwitterTimelineEmbed,
-  TwitterTweetEmbed,
-} from "react-twitter-embed";
+import { TwitterTimelineEmbed, TwitterTweetEmbed } from "react-twitter-embed";
 
 function Widget() {
   return (
@@ -18,11 +15,9 @@ function Widget() {
       <div className="widgets__widgetContainer">
         <h2>What's happening?</h2>
 
-        <TwitterTweetEmbed
-          tweetId={"1470372755384291331"}
-        />
+        <TwitterTweetEmbed source="profile" tweetId={"1470372755384291331"} />
         <TwitterTimelineEmbed
-          source="profile"
+          sourceType="profile"
           screenName="SpaceX"
           options={{ height: 600 }}
         />
