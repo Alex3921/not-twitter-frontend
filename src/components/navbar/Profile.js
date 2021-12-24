@@ -4,7 +4,7 @@ import "./NavbarOption.css";
 
 function Profile({ active, text, Icon }) {
   return (
-    <div className={`navbarOption ${active && "navbarOption__active"}`}>
+    <div className="navbar__option">
       <Icon sx={{ fontSize: 30 }} />
       <NavLink to={text.toLowerCase()} ><span>{text}</span></NavLink>
     </div>
