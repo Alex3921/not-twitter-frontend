@@ -1,5 +1,5 @@
 import React from "react";
-import Pages from "./Pages"
+import Pages from "./components/pages/Pages";
 import "./App.css";
 
 function App() {
