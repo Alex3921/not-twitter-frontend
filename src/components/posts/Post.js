@@ -3,8 +3,10 @@ import { ReplyPost } from "./ReplyPost";
 import { SharePost } from "./SharePost";
 import { LikePost } from "./LikePost";
 import { BookmarkPost } from "./BookmarkPost";
-import { Avatar, Button } from "@mui/material";
+import { Avatar } from "@mui/material";
 import { Verified } from "@mui/icons-material";
+
+// Button - from mui/material
 
 function Post({post}) {
   // debugger
@@ -17,15 +19,15 @@ function Post({post}) {
       <div className="post__body">
         <div className="post__header">
           <div className="post__headerText">
-            <span className="post__authorName">Alexandru Boncut </span>
+            <span className="post__authorName">{post.author.name}</span>
             <span>
               <Verified className="post__badge" />
             </span>
-            <span className="post__username">@alexbonc</span>
+            <span className="post__username">{post.author.username}</span>
           </div>
         </div>
         <div className="post__content">
-          <p></p>
+          <p>{post.content}</p>
         </div>
         <div className="post__footer">
           <ReplyPost />
