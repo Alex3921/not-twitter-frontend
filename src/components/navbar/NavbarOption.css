@@ -1,27 +1,29 @@
-.navbarOption {
+.navbar__option {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-.navbarOption:hover {
+.navbar__option:hover {
   background-color: #e6e3e3;
   border-radius: 30px;
   transition: color 100ms ease-out;
 }
 
 /* Mui adds a class of it's own to our icons. */
-/* With the following we are saying: inside of navbarOption
+/* With the following we are saying: inside of navbar__option
 if we find a child with class x add padding of 20 px. */
-.navbarOption > .MuiSvgIcon-root {
+.navbar__option > .MuiSvgIcon-root {
   padding: 20px;
 }
 
-.navbarOption > span {
+.navbar__option > a {
+  text-decoration: none;
+  color: inherit;
   font-size: 20px;
   margin-right: 20px;
 }
 
-.navbarOption__active {
+.navbar__option > a.active {
   font-weight: 800;
 }
