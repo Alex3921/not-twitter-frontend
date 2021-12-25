@@ -1,5 +1,9 @@
 import React from "react";
-import NavbarOption from "./NavbarOption";
+// import NavbarOption from "./NavbarOption";
+import Home from "./Home";
+import Bookmarks from "./Bookmarks"
+import Profile from "./Profile";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -14,11 +18,11 @@ function Navbar() {
   return (
     <div className="navbar">
       <TwitterIcon className="navbar__twitterIcon" />
-      <NavbarOption active Icon={HomeOutlinedIcon} text="Home" />
-      <NavbarOption Icon={NotificationsNoneOutlinedIcon} text="Notifications" />
-      <NavbarOption Icon={MailOutlinedIcon} text="Messages" />
-      <NavbarOption Icon={BookmarkBorderOutlinedIcon} text="Bookmarks" />
-      <NavbarOption Icon={PermIdentityOutlinedIcon} text="Profile" />
+      <Home active Icon={HomeOutlinedIcon} text="Home" />
+      {/* <Notifications Icon={NotificationsNoneOutlinedIcon} text="Notifications" /> */}
+      {/* <NavbarOption Icon={MailOutlinedIcon} text="Messages" /> */}
+      <Bookmarks Icon={BookmarkBorderOutlinedIcon} text="Bookmarks" />
+      <Profile Icon={PermIdentityOutlinedIcon} text="Profile" />
 
       <Button
         variant="outlined"
