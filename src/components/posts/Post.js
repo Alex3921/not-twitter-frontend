@@ -23,7 +23,7 @@ function Post({post}) {
             <span>
               <Verified className="post__badge" />
             </span>
-            <span className="post__username">{post.author.username}</span>
+            <span className="post__username">{"@" + post.author.username}</span>
           </div>
         </div>
         <div className="post__content">
