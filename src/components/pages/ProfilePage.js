@@ -2,6 +2,7 @@ import React from "react";
 import PostsContainer from "../containers/PostsContainer";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import FmdGoodIconOutlined from "@mui/icons-material/FmdGoodOutlined";
+import { useRouteMatch } from "react-router-dom";
 
 import "../feed/Feed.css";
 
@@ -10,6 +11,8 @@ function ProfilePage() {
   const joined = new Date(user.created_at);
   const year = joined.getFullYear();
   const month = joined.toLocaleString("default", { month: "long" });
+
+  let { url } = useRouteMatch();
 
   return (
     <div className="feed profile">
@@ -27,7 +30,10 @@ function ProfilePage() {
           </span>
         </div>
       </div>
-
+      <div className="feed__header">
+        <button>Tweets</button>
+        <button>Likes</button>
+      </div>
       <PostsContainer />
     </div>
   );
