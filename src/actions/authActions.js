@@ -1,4 +1,5 @@
 import { SIGNIN } from "./actionEndpoints";
+import { Redirect } from "react-router-dom";
 
 export const signinUser = (user) => {
   return (dispatch) => {
@@ -19,7 +20,7 @@ export const signinUser = (user) => {
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("jwt", data.jwt);
           dispatch({ type: "LOGIN_SUCCESSFUL", userData: data });
-          window.history.pushState(data.user, "", "/home");
+          <Redirect to="/home" />
         }
       });
   };
