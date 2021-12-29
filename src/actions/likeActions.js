@@ -1,11 +1,14 @@
-import React from 'react'
+import {LIKES} from "./actionEndpoints"
 
-function likeActions() {
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default likeActions
+export const fetchLikedPosts = () => {
+  return (dispatch) => {
+    dispatch({ type: "LOADING_LIKES" });
+    fetch(`${LIKES}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.jwt}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => dispatch({ type: "FETCH_LIKED_POSTS", likedPosts: data }));
+  };
+};
