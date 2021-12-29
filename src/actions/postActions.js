@@ -1,10 +1,9 @@
-const API = "http://localhost:3000/posts";
+import { POSTS } from "./actionEndpoints"
 
-// write and export your action creator function here
 export const fetchPosts = () => {
   return (dispatch) => {
     dispatch({ type: "LOADING_POSTS" });
-    fetch(`${API}`, {
+    fetch(`${POSTS}`, {
       headers: {
         Authorization: `Bearer ${localStorage.jwt}`,
       },
@@ -14,10 +13,11 @@ export const fetchPosts = () => {
   };
 };
 
+
 export const addPost = (post = {}) => {
   return (dispatch) => {
     dispatch({ type: "LOADING_POSTS" });
-    fetch(`${API}`, {
+    fetch(`${POSTS}`, {
       method: "POST",
       headers: {
         Accept: "application/json",
