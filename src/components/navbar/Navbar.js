@@ -26,10 +26,10 @@ function Navbar() {
 
       <Button
         variant="outlined"
-        className="navbar__tweet-btn"
+        className="navbar__signout-btn"
         fullWidth
       >
-        Tweet
+        Sign out
       </Button>
     </div>
   );
