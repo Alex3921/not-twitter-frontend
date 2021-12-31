@@ -13,7 +13,7 @@
   margin-bottom: 20px;
 }
 
-.navbar .navbar__tweet-btn {
+.navbar .navbar__signout-btn {
   background-color: var(--twitter-color);
   border: none;
   color: white;
@@ -24,6 +24,6 @@
   margin-top: 20px;
 }
 
-.navbar .navbar__tweet-btn:hover {
+.navbar .navbar__signout-btn:hover {
   background-color: #47a2db;
 }
