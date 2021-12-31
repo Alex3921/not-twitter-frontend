@@ -5,8 +5,10 @@ import PostsContainer from "../containers/PostsContainer";
 import "../feed/Feed.css";
 
 export default class HomePage extends Component {
+  componentDidMount() {
+    this.props.fetchHomePosts();
+  }
 
-  
   render() {
     return (
       <div className="feed">
@@ -16,7 +18,6 @@ export default class HomePage extends Component {
 
         <Tweet />
         <PostsContainer />
-
       </div>
     );
   }
