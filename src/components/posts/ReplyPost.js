@@ -4,7 +4,9 @@ import { ChatBubbleOutline } from "@mui/icons-material";
 export const ReplyPost = () => {
   return (
     <div className="element">
-      <ChatBubbleOutline fontSize="small" />
+      <button>
+        <ChatBubbleOutline className="chat" fontSize="small" />
+      </button>
     </div>
   );
 };
