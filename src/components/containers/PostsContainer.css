@@ -43,3 +43,30 @@
   color: var(--twitter-color);
   font-size: 16px;
 }
+
+.post .element button {
+  border: none;
+  padding: 8px;
+}
+
+.post .element button:hover {
+  background-color: #e6e3e3;
+  cursor: inherit;
+  border-radius: 35px;
+}
+
+.post .element .heart:hover {
+  color: red;
+}
+
+.post .element .chat:hover {
+  color: var(--twitter-color);;
+}
+
+.post .element .save:hover {
+  color: var(--twitter-color);;
+}
+
+.post .element .share:hover {
+  color: green;
+}
