@@ -6,7 +6,7 @@ function Home({ active, text, Icon }) {
   return (
     <div className="navbar__option">
       <Icon sx={{ fontSize: 30 }} />
-      <NavLink to={text.toLowerCase()} ><span>{text}</span></NavLink>
+      <NavLink to={"/" + text.toLowerCase()} ><span>{text}</span></NavLink>
     </div>
   );
 }
