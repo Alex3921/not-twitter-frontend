@@ -1,9 +1,11 @@
 import { Repeat } from "@mui/icons-material";
 
-export const SharePost = () => {
+export const SharePost = (props) => {
   return (
     <div className="element">
-      <Repeat fontSize="small" />
+      <button onClick={() => props.sharePost(props.postId)}>
+        <Repeat className="share" fontSize="small" />
+      </button>
     </div>
   );
 };
