@@ -1,22 +1,37 @@
-import { POSTS } from "./actionEndpoints"
+import { HOME, POSTS, PROFILE } from "./apiEndpoints";
 
-export const fetchPosts = () => {
+export const fetchHomePosts = () => {
   return (dispatch) => {
     dispatch({ type: "LOADING_POSTS" });
-    fetch(`${POSTS}`, {
+    fetch(`${HOME}`, {
       headers: {
         Authorization: `Bearer ${localStorage.jwt}`,
       },
     })
       .then((response) => response.json())
-      .then((data) => dispatch({ type: "FETCH_POSTS", posts: data }));
+      .then((data) =>
+        dispatch({ type: "FETCH_HOME_POSTS", posts: data.homePosts })
+      );
   };
 };
 
-
-export const addPost = (post = {}) => {
+export const fetchUserPosts = () => {
   return (dispatch) => {
     dispatch({ type: "LOADING_POSTS" });
+    fetch(`${PROFILE}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.jwt}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) =>
+        dispatch({ type: "FETCH_USER_POSTS", userPosts: data.userPosts })
+      );
+  };
+};
+
+export const addPost = (post) => {
+  return (dispatch) => {
     fetch(`${POSTS}`, {
       method: "POST",
       headers: {
@@ -27,6 +42,6 @@ export const addPost = (post = {}) => {
       body: JSON.stringify(post),
     })
       .then((response) => response.json())
-      .then((data) => dispatch({ type: "ADD_POST", post: data }));
+      .then((data) => dispatch({ type: "ADD_POST", post: data.post }));
   };
 };
