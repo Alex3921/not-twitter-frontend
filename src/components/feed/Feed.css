@@ -26,3 +26,23 @@
 .feed__header > h2 {
   font-size: 20px;
 }
+
+/* Profile page Tweets and Likes buttons */
+.feed__header button {
+  padding: 0px 16px;
+  border: none;
+  cursor: pointer;
+  height: 53px;
+  min-width: 56px;
+  align-items: center;
+  font-size: 16px;
+}
+
+.feed__header button:hover {
+  background-color: #e6e3e3;
+}
+
+.feed__header button.active {
+  border-bottom: 4px solid #47a2db;
+  border-radius: 2px;
+}
