@@ -1,9 +1,11 @@
 import { FavoriteBorder } from "@mui/icons-material";
 
-export const LikePost = () => {
+export const LikePost = (props) => {
   return (
     <div className="element">
-      <FavoriteBorder fontSize="small" />
+      <button onClick={() => props.likePost(props.postId)}>
+        <FavoriteBorder className="heart" fontSize="small" />
+      </button>
     </div>
   );
 };
