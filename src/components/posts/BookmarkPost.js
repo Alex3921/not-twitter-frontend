@@ -1,9 +1,11 @@
 import { Publish } from "@mui/icons-material";
 
-export const BookmarkPost = () => {
+export const BookmarkPost = (props) => {
   return (
     <div className="element">
-      <Publish fontSize="small" />
+      <button onClick={() => props.savePost(props.postId)}>
+        <Publish className="save" fontSize="small" />
+      </button>
     </div>
   );
 };
