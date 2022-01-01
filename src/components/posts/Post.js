@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component} from "react";
+import { connect } from "react-redux"
 import { ReplyPost } from "./ReplyPost";
 import { SharePost } from "./SharePost";
 import { LikePost } from "./LikePost";
@@ -6,38 +7,49 @@ import { BookmarkPost } from "./BookmarkPost";
 import { Avatar } from "@mui/material";
 import { Verified } from "@mui/icons-material";
 
+import { savePost } from "../../actions/bookmarkActions"
+import { likePost } from "../../actions/likeActions"
+import { sharePost } from "../../actions/shareActions"
+
 // Button - from mui/material
 
-function Post({post}) {
-  // debugger
+export class Post extends Component {
+  render() {
   return (
     <>
-    {console.log(post)}
       <div className="post__avatar">
-        <Avatar src="https://kajabi-storefronts-production.global.ssl.fastly.newt/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png" />
+        <Avatar src="" />
       </div>
       <div className="post__body">
         <div className="post__header">
           <div className="post__headerText">
-            <span className="post__authorName">{post.author.name}</span>
+            <span className="post__authorName">{this.props.post.author.name}</span>
             <span>
               <Verified className="post__badge" />
             </span>
-            <span className="post__username">{"@" + post.author.username}</span>
+            <span className="post__username">{"@" + this.props.post.author.username}</span>
           </div>
         </div>
         <div className="post__content">
-          <p>{post.content}</p>
+          <p>{this.props.post.content}</p>
         </div>
         <div className="post__footer">
           <ReplyPost />
-          <SharePost />
-          <LikePost />
-          <BookmarkPost />
+          <SharePost sharePost={this.props.sharePost} postId={this.props.post.id} />
+          <LikePost likePost={this.props.likePost} postId={this.props.post.id} />
+          <BookmarkPost savePost={this.props.savePost} postId={this.props.post.id} />
         </div>
       </div>
     </>
-  );
+  )};
 }
 
-export default Post;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    savePost: (postId) => dispatch(savePost(postId)),
+    likePost: (postId) => dispatch(likePost(postId)),
+    sharePost: (postId) => dispatch(sharePost(postId))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Post)
