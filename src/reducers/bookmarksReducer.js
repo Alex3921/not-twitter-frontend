@@ -1,11 +1,11 @@
-import React from 'react'
+const bookmarksReducer = (state = [], action) => {
+  switch (action.type) {
+    case "ADD_BOOKMARK":
+      return [...state, ...action.savedPost];
 
-function bookmarksReducer() {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+    default:
+      return state;
+  }
+};
 
-export default bookmarksReducer
+export default bookmarksReducer;
