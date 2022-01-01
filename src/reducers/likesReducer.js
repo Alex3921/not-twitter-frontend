@@ -1,11 +1,11 @@
-import React from 'react'
+const likesReducer = (state = [], action) => {
+  switch (action.type) {
+    case "ADD_LIKE":
+      return [...state, ...action.likedPost];
 
-function likesReducer() {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+    default:
+      return state;
+  }
+};
 
-export default likesReducer
+export default likesReducer;
