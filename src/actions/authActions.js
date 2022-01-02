@@ -24,6 +24,13 @@ export const signinUser = (user) => {
   };
 };
 
+export const signoutUser = () => {
+  return (dispatch) => {
+    localStorage.clear();
+    dispatch({ type: "SIGN_OUT" });
+  };
+};
+
 // export const signupUser = (user) => {
 //   return (dispatch) => {
 //     dispatch({ type: "SIGNING_UP" });
