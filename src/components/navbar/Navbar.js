@@ -13,12 +13,7 @@ import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlin
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import Button from "@mui/material/Button";
 
-function Navbar() {
-  const signOut = () => {
-    localStorage.clear();
-    window.location.reload();
-  };
-  
+function Navbar(props) {
   return (
     <div className="navbar">
       <TwitterIcon className="navbar__twitterIcon" />
@@ -32,7 +27,7 @@ function Navbar() {
         variant="outlined"
         className="navbar__signout-btn"
         fullWidth
-        onClick={() => signOut()}
+        onClick={() => props.signoutUser()}
       >
         Sign out
       </Button>
