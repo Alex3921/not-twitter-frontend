@@ -1,26 +1,24 @@
-import { SIGNIN } from "./actionEndpoints";
-import { Redirect } from "react-router-dom";
+import { SIGNIN } from "./apiEndpoints";
 
 export const signinUser = (user) => {
   return (dispatch) => {
-    dispatch({ type: "LOGGING_IN", user });
+    dispatch({ type: "LOADING" });
     fetch(`${SIGNIN}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({user: user}),
+      body: JSON.stringify(user),
     })
       .then((response) => response.json())
       .then((data) => {
         if (data.error) {
           alert(data.error);
         } else {
-          localStorage.setItem("user", JSON.stringify(data.user));
+          localStorage.setItem("username", data.user.username);
           localStorage.setItem("jwt", data.jwt);
-          dispatch({ type: "LOGIN_SUCCESSFUL", userData: data });
-          <Redirect to="/home" />
+          dispatch({ type: "SIGNIN_SUCCESSFUL", userData: data.user });
         }
       });
   };
