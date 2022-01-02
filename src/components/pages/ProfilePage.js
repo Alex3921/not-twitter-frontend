@@ -18,6 +18,11 @@ export default class ProfilePage extends Component {
     this.props.fetchLikedPosts();
   };
 
+  updateLikes = () => {
+    this.setState({ btnStatus: false });
+    this.fetchLikes();
+  };
+
   componentDidMount() {
     this.fetchTweets();
   }
@@ -37,9 +42,12 @@ export default class ProfilePage extends Component {
               <DateRangeIcon fontSize="small" />
               <span>
                 {"Joined " +
-                  new Date(this.props.user.created_at).toLocaleString("default", {
-                    month: "long",
-                  }) +
+                  new Date(this.props.user.created_at).toLocaleString(
+                    "default",
+                    {
+                      month: "long",
+                    }
+                  ) +
                   " " +
                   new Date(this.props.user.created_at).getFullYear()}
               </span>
