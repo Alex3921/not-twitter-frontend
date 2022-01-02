@@ -23,8 +23,6 @@ export class SigninPage extends Component {
       username: "",
       password: "",
     });
-    window.history.pushState("","","/home")
-    window.location.reload()
   };
 
   render() {
