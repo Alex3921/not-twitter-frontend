@@ -5,43 +5,44 @@ import FmdGoodIconOutlined from "@mui/icons-material/FmdGoodOutlined";
 
 import "../feed/Feed.css";
 
-const user = localStorage.user ? JSON.parse(localStorage.user) : null;
-const joined = localStorage.user ? new Date(user.created_at) : null;
-const year = localStorage.user ? joined.getFullYear() : null;
-const month = localStorage.user ? joined.toLocaleString("default", { month: "long" }) : null;
-
 export default class ProfilePage extends Component {
   state = { btnStatus: false };
 
   fetchTweets = () => {
-    this.setState({ btnStatus: true })
-    this.props.fetchUserPosts()
-  }
+    this.setState({ btnStatus: true });
+    this.props.fetchUserPosts();
+  };
 
   fetchLikes = () => {
-    this.setState({ btnStatus: false })
-    this.props.fetchLikedPosts()
-  }
+    this.setState({ btnStatus: false });
+    this.props.fetchLikedPosts();
+  };
 
   componentDidMount() {
-    this.fetchTweets()
+    this.fetchTweets();
   }
-
 
   render() {
     return (
       <div className="feed profile">
         <div className="feed__header">
-          <h2>{user.name}</h2>
-          <h4>{"@" + user.username}</h4>
+          <h2>{this.props.user.name}</h2>
+          <h4>{"@" + this.props.user.username}</h4>
           <div className="date__location">
             <span className="location">
               <FmdGoodIconOutlined fontSize="small" />
-              <span>{user.location}</span>
+              <span>{this.props.user.location}</span>
             </span>
             <span className="dateJoined">
               <DateRangeIcon fontSize="small" />
-              <span>{"Joined " + month + " " + year}</span>
+              <span>
+                {"Joined " +
+                  new Date(this.props.user.created_at).toLocaleString("default", {
+                    month: "long",
+                  }) +
+                  " " +
+                  new Date(this.props.user.created_at).getFullYear()}
+              </span>
             </span>
           </div>
         </div>
