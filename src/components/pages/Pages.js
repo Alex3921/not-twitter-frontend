@@ -13,6 +13,7 @@ import { connect } from "react-redux";
 import { fetchSavedPosts } from "../../actions/bookmarkActions";
 import { fetchLikedPosts } from "../../actions/likeActions";
 import { fetchHomePosts, fetchUserPosts } from "../../actions/postActions";
+import { signoutUser } from "../../actions/authActions";
 
 import "../feed/Feed.css";
 
@@ -20,16 +21,19 @@ export class Pages extends Component {
   render() {
     return (
       <Switch>
-        {localStorage.jwt ? (
+        {console.log(localStorage)}
+        {console.log(this.props)}
+        {this.props.user.isSignedIn ? (
           <>
+            <Redirect to="/home" />
             <Route exact path="/home">
-              <Navbar />
+              <Navbar signoutUser={() => this.props.signoutUser()} />
               <HomePage fetchHomePosts={() => this.props.fetchHomePosts()} />
               <Widget />
             </Route>
 
             <Route exact path="/bookmarks">
-              <Navbar />
+              <Navbar signoutUser={() => this.props.signoutUser()} />
               <BookmarksPage
                 fetchSavedPosts={() => this.props.fetchSavedPosts()}
               />
@@ -37,8 +41,9 @@ export class Pages extends Component {
             </Route>
 
             <Route exact path="/profile/:username">
-              <Navbar />
+              <Navbar signoutUser={() => this.props.signoutUser()} />
               <ProfilePage
+                user={this.props.user.user}
                 fetchUserPosts={() => this.props.fetchUserPosts()}
                 fetchLikedPosts={() => this.props.fetchLikedPosts()}
               />
@@ -58,9 +63,9 @@ export class Pages extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  users: console.log(state)
-})
+const mapStateToProps = (state) => {
+  return { user: state.user };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -68,6 +73,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchLikedPosts: () => dispatch(fetchLikedPosts()),
     fetchHomePosts: () => dispatch(fetchHomePosts()),
     fetchUserPosts: () => dispatch(fetchUserPosts()),
+    signoutUser: () => dispatch(signoutUser()),
   };
 };
 
