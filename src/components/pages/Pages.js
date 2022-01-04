@@ -21,8 +21,6 @@ export class Pages extends Component {
   render() {
     return (
       <Switch>
-        {console.log(localStorage)}
-        {console.log(this.props)}
         {this.props.user.isSignedIn ? (
           <>
             <Redirect to="/home" />
