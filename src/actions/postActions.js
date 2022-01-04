@@ -10,8 +10,8 @@ export const fetchHomePosts = () => {
     })
       .then((response) => response.json())
       .then((data) =>
-        dispatch({ type: "FETCH_HOME_POSTS", posts: data.homePosts });
-    );
+        dispatch({ type: "FETCH_HOME_POSTS", posts: data.homePosts })
+      );
   };
 };
 
