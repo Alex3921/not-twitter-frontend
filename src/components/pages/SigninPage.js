@@ -5,10 +5,13 @@ import { signinUser } from "../../actions/authActions";
 import "./SigninPage.css";
 
 export class SigninPage extends Component {
-  state = {
-    username: "",
-    password: "",
-  };
+  constructor() {
+    super();
+    this.state = {
+      username: "",
+      password: "",
+    };
+  }
 
   handleChange = (e) => {
     this.setState({
@@ -31,11 +34,7 @@ export class SigninPage extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="username">
             <label htmlFor="username">Username</label>
-            <input 
-              type="text" 
-              name="username" 
-              onChange={this.handleChange} 
-              />
+            <input type="text" name="username" onChange={this.handleChange} />
           </div>
           <div className="password">
             <label htmlFor="password">Password</label>
