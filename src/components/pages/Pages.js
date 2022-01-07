@@ -31,7 +31,6 @@ export class Pages extends Component {
             </Route>
 
             <Route exact path="/bookmarks">
-              {/* <Navbar signoutUser={() => this.props.signoutUser()} /> */}
               <BookmarksPage
                 fetchSavedPosts={() => this.props.fetchSavedPosts()}
               />
