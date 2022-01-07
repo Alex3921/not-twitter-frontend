@@ -43,6 +43,7 @@ export class Pages extends Component {
                 fetchLikedPosts={() => this.props.fetchLikedPosts()}
               />
             </Route>
+            
             <Widget />
           </>
         ) : (
