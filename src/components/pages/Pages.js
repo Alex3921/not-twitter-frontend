@@ -28,7 +28,6 @@ export class Pages extends Component {
             <Redirect to="/home" />
             <Route exact path="/home">
               <HomePage fetchHomePosts={() => this.props.fetchHomePosts()} />
-              {/* <Widget /> */}
             </Route>
 
             <Route exact path="/bookmarks">
