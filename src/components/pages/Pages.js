@@ -37,7 +37,6 @@ export class Pages extends Component {
             </Route>
 
             <Route exact path="/profile/:username">
-              {/* <Navbar signoutUser={() => this.props.signoutUser()} /> */}
               <ProfilePage
                 user={this.props.user.user}
                 fetchUserPosts={() => this.props.fetchUserPosts()}
