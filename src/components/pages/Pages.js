@@ -34,7 +34,6 @@ export class Pages extends Component {
               <BookmarksPage
                 fetchSavedPosts={() => this.props.fetchSavedPosts()}
               />
-              {/* <Widget /> */}
             </Route>
 
             <Route exact path="/profile/:username">
