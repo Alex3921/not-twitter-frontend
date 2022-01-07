@@ -21,7 +21,7 @@ export class Pages extends Component {
   render() {
     return (
       <Switch>
-        {this.props.user.isSignedIn ? (
+        {localStorage.jwt ? (
           <>
             <Navbar signoutUser={() => this.props.signoutUser()} />
             
@@ -43,7 +43,7 @@ export class Pages extends Component {
                 fetchLikedPosts={() => this.props.fetchLikedPosts()}
               />
             </Route>
-            
+
             <Widget />
           </>
         ) : (
