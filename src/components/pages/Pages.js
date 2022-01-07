@@ -23,30 +23,31 @@ export class Pages extends Component {
       <Switch>
         {this.props.user.isSignedIn ? (
           <>
+            <Navbar signoutUser={() => this.props.signoutUser()} />
+            
             <Redirect to="/home" />
             <Route exact path="/home">
-              <Navbar signoutUser={() => this.props.signoutUser()} />
               <HomePage fetchHomePosts={() => this.props.fetchHomePosts()} />
-              <Widget />
+              {/* <Widget /> */}
             </Route>
 
             <Route exact path="/bookmarks">
-              <Navbar signoutUser={() => this.props.signoutUser()} />
+              {/* <Navbar signoutUser={() => this.props.signoutUser()} /> */}
               <BookmarksPage
                 fetchSavedPosts={() => this.props.fetchSavedPosts()}
               />
-              <Widget />
+              {/* <Widget /> */}
             </Route>
 
             <Route exact path="/profile/:username">
-              <Navbar signoutUser={() => this.props.signoutUser()} />
+              {/* <Navbar signoutUser={() => this.props.signoutUser()} /> */}
               <ProfilePage
                 user={this.props.user.user}
                 fetchUserPosts={() => this.props.fetchUserPosts()}
                 fetchLikedPosts={() => this.props.fetchLikedPosts()}
               />
-              <Widget />
             </Route>
+            <Widget />
           </>
         ) : (
           <>
