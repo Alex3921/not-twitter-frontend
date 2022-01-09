@@ -1,7 +1,6 @@
 const userReducer = (state = { isSignedIn: false, user: null }, action) => {
   switch (action.type) {
     case "LOADING":
-      console.log("Loading:" + state);
       return {...state};
 
     case "SIGNIN_SUCCESSFUL":
