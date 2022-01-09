@@ -15,8 +15,6 @@ const userReducer = (state = { isSignedIn: false, user: null }, action) => {
       return { isSignedIn: false, user: null };
 
     default:
-      console.log("Default:" + state.isSignedIn);
-
       return state;
   }
 };
