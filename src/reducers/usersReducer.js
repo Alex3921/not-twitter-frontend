@@ -5,8 +5,6 @@ const userReducer = (state = { isSignedIn: false, user: null }, action) => {
       return {...state};
 
     case "SIGNIN_SUCCESSFUL":
-      console.log("Success:" + state);
-
       return { isSignedIn: true, user: action.userData };
 
     case "SIGN_OUT":
