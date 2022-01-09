@@ -10,8 +10,6 @@ const userReducer = (state = { isSignedIn: false, user: null }, action) => {
       return { isSignedIn: true, user: action.userData };
 
     case "SIGN_OUT":
-      console.log("Signout:" + state);
-
       return { isSignedIn: false, user: null };
 
     default:
