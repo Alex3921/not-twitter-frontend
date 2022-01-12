@@ -27,6 +27,7 @@ export class Pages extends Component {
             
             <Redirect to="/home" />
             <Route exact path="/home">
+            {console.log(this.props)}
               <HomePage fetchHomePosts={() => this.props.fetchHomePosts()} />
             </Route>
 
