@@ -32,8 +32,6 @@ export class Pages extends Component {
             </Route>
 
             <Route exact path="/bookmarks">
-            {console.log(this.props)}
-
               <BookmarksPage
                 fetchSavedPosts={() => this.props.fetchSavedPosts()}
               />
@@ -46,7 +44,6 @@ export class Pages extends Component {
                 fetchLikedPosts={() => this.props.fetchLikedPosts()}
               />
             </Route>
-
             <Widget />
           </>
         ) : (
