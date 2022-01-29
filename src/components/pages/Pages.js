@@ -60,8 +60,6 @@ export class Pages extends Component {
 }
 
 const mapStateToProps = (state) => {
-  {console.log(this.props)}
-
   return { user: state.user };
 };
 
