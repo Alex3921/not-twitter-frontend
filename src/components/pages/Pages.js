@@ -21,7 +21,6 @@ export class Pages extends Component {
   render() {
     return (
       <Switch>
-      
         {localStorage.jwt ? (
           <>
             <Navbar signoutUser={() => this.props.signoutUser()} />
@@ -63,7 +62,6 @@ export class Pages extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log("Hey")
   return { user: state.user };
 };
 
