@@ -24,23 +24,28 @@ export class Pages extends Component {
         {localStorage.jwt ? (
           <>
             <Navbar signoutUser={() => this.props.signoutUser()} />
+            
             <Redirect to="/home" />
-            console.log("hey")
             <Route exact path="/home">
               <HomePage fetchHomePosts={() => this.props.fetchHomePosts()} />
             </Route>
+
             <Route exact path="/bookmarks">
+
               <BookmarksPage
                 fetchSavedPosts={() => this.props.fetchSavedPosts()}
               />
             </Route>
+
             <Route exact path="/profile/:username">
+
               <ProfilePage
                 user={this.props.user.user}
                 fetchUserPosts={() => this.props.fetchUserPosts()}
                 fetchLikedPosts={() => this.props.fetchLikedPosts()}
               />
             </Route>
+
             <Widget />
           </>
         ) : (
