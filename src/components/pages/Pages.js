@@ -68,6 +68,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+  console.log("Hey")
   return {
     fetchSavedPosts: () => dispatch(fetchSavedPosts()),
     fetchLikedPosts: () => dispatch(fetchLikedPosts()),
