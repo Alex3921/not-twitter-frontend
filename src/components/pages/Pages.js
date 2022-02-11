@@ -51,7 +51,6 @@ export class Pages extends Component {
         ) : (
           <>
             <Redirect to="/signin" />
-            console.log("Hey")
             <Route exact path="/signin">
               <SigninPage />
             </Route>
