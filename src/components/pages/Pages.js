@@ -18,8 +18,8 @@ import { signoutUser } from "../../actions/authActions";
 import "../feed/Feed.css";
 
 export class Pages extends Component {
+  console.log("Hey")
   render() {
-    console.log("Hey")
     return (
       <Switch>
         {localStorage.jwt ? (
