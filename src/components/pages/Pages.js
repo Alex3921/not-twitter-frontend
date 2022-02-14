@@ -24,7 +24,6 @@ export class Pages extends Component {
         {localStorage.jwt ? (
           <>
             <Navbar signoutUser={() => this.props.signoutUser()} />
-            
             <Redirect to="/home" />
             <Route exact path="/home">
               <HomePage fetchHomePosts={() => this.props.fetchHomePosts()} />
