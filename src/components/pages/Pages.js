@@ -19,7 +19,6 @@ import "../feed/Feed.css";
 
 export class Pages extends Component {
   render() {
-    console.log("Hey")
     return (
       <Switch>
         {localStorage.jwt ? (
