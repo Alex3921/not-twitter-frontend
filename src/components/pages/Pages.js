@@ -31,8 +31,6 @@ export class Pages extends Component {
             </Route>
 
             <Route exact path="/bookmarks">
-            console.log("Hey")
-
               <BookmarksPage
                 fetchSavedPosts={() => this.props.fetchSavedPosts()}
               />
