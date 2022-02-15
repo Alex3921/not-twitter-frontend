@@ -62,6 +62,7 @@ export class Pages extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log("Hey")
   return { user: state.user };
 };
 
