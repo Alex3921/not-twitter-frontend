@@ -25,7 +25,7 @@ export class Pages extends Component {
           <>
             <Navbar signoutUser={() => this.props.signoutUser()} />
             <Redirect to="/home" />
-            {/* console.log("Home") */}
+            console.log("Home")
             <Route exact path="/home">
               <HomePage fetchHomePosts={() => this.props.fetchHomePosts()} />
             </Route>
