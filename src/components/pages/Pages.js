@@ -62,7 +62,7 @@ export class Pages extends Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log("Hey")
+  console.log("Hey")
   return { user: state.user };
 };
 
