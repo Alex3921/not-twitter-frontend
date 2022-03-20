@@ -31,6 +31,7 @@ export default class ProfilePage extends Component {
     return (
       <div className="feed profile">
         <div className="feed__header">
+        {console.log(this.props)}
           <h2>{this.props.user.name}</h2>
           <h4>{"@" + this.props.user.username}</h4>
           <div className="date__location">
