@@ -36,7 +36,7 @@
 }
 
 .post__footer .element {
-  flex: 1 1 12px;  
+  flex: 1 1 12px;
 }
 
 .post .post__badge {
@@ -45,8 +45,9 @@
 }
 
 .post .element button {
+  background-color: transparent;
   border: none;
-  padding: 8px;
+  padding: 6px;
 }
 
 .post .element button:hover {
@@ -60,11 +61,11 @@
 }
 
 .post .element .chat:hover {
-  color: var(--twitter-color);;
+  color: var(--twitter-color);
 }
 
 .post .element .save:hover {
-  color: var(--twitter-color);;
+  color: var(--twitter-color);
 }
 
 .post .element .share:hover {
