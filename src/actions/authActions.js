@@ -16,6 +16,7 @@ export const signinUser = (user) => {
         if (data.error) {
           alert(data.error);
         } else {
+          console.log("authActions -> SignIn User", data)
           localStorage.setItem("username", data.user.username);
           localStorage.setItem("jwt", data.jwt);
           dispatch({ type: "SIGNIN_SUCCESSFUL", userData: data.user });
