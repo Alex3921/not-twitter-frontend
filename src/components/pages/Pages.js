@@ -21,11 +21,11 @@ export class Pages extends Component {
   render() {
     return (
       <Switch>
+        {console.log(localStorage)}
         {localStorage.jwt ? (
           <>
             <Navbar signoutUser={() => this.props.signoutUser()} />
             <Redirect to="/home" />
-            console.log("Home")
             <Route exact path="/home">
               <HomePage fetchHomePosts={() => this.props.fetchHomePosts()} />
             </Route>
@@ -37,7 +37,7 @@ export class Pages extends Component {
             </Route>
 
             <Route exact path="/profile/:username">
-            console.log("Profile")
+              {console.log("Pages -> profile:", this.props)}
               <ProfilePage
                 user={this.props.user.user}
                 fetchUserPosts={() => this.props.fetchUserPosts()}
@@ -50,7 +50,6 @@ export class Pages extends Component {
         ) : (
           <>
             <Redirect to="/signin" />
-            console.log("Sign in")
             <Route exact path="/signin">
               <SigninPage />
             </Route>
@@ -62,12 +61,10 @@ export class Pages extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log("Hey")
   return { user: state.user };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  // console.log("Dispatch")
   return {
     fetchSavedPosts: () => dispatch(fetchSavedPosts()),
     fetchLikedPosts: () => dispatch(fetchLikedPosts()),
