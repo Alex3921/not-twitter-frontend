@@ -4,9 +4,9 @@ import { signinUser } from "../../actions/authActions";
 
 import "./SigninPage.css";
 
-export class SigninPage extends Component {
-  constructor() {
-    super();
+class SigninPage extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
       username: "",
       password: "",
@@ -22,10 +22,7 @@ export class SigninPage extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.signinUser(this.state);
-    this.setState({
-      username: "",
-      password: "",
-    });
+    this.setState({ username: "", password: "" });
   };
 
   render() {
