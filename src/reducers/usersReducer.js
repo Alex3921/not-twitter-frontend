@@ -1,7 +1,7 @@
 const userReducer = (state = { isSignedIn: false, user: null }, action) => {
   switch (action.type) {
     case "LOADING":
-      return {...state};
+      return { ...state };
 
     case "SIGNIN_SUCCESSFUL":
       return { isSignedIn: true, user: action.userData };
