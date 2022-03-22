@@ -18,11 +18,14 @@ import { signoutUser } from "../../actions/authActions";
 import "../feed/Feed.css";
 
 export class Pages extends Component {
+  state = {
+    user: JSON.parse(localStorage.getItem("user")),
+  };
   render() {
     return (
       <Switch>
-        {console.log(localStorage)}
-        {localStorage.jwt ? (
+        {console.log(localStorage, this.state)}
+        {localStorage.user ? (
           <>
             <Navbar signoutUser={() => this.props.signoutUser()} />
             <Redirect to="/home" />
@@ -37,9 +40,9 @@ export class Pages extends Component {
             </Route>
 
             <Route exact path="/profile/:username">
-              {console.log("Pages -> profile:", this.props)}
+              {console.log("Pages -> profile:", this.state.user)}
               <ProfilePage
-                user={this.props.user.user}
+                user={this.state.user}
                 fetchUserPosts={() => this.props.fetchUserPosts()}
                 fetchLikedPosts={() => this.props.fetchLikedPosts()}
               />
@@ -60,10 +63,6 @@ export class Pages extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { user: state.user };
-};
-
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchSavedPosts: () => dispatch(fetchSavedPosts()),
@@ -74,4 +73,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Pages);
+export default connect(null, mapDispatchToProps)(Pages);
