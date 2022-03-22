@@ -24,7 +24,6 @@ export class Pages extends Component {
   render() {
     return (
       <Switch>
-        {console.log(localStorage, this.state)}
         {localStorage.user ? (
           <>
             <Navbar signoutUser={() => this.props.signoutUser()} />
