@@ -40,7 +40,6 @@ export class Pages extends Component {
             </Route>
 
             <Route exact path="/profile/:username">
-              {console.log("Pages -> profile:", this.state.user)}
               <ProfilePage
                 user={this.state.user}
                 fetchUserPosts={() => this.props.fetchUserPosts()}
