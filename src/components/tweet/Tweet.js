@@ -28,7 +28,7 @@ export class Tweet extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="tweet__input">
             <div className="tweet__avatar">
-              <Avatar src="https://kajabi-storefronts-production.global.ssl.fastly.newt/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png" />
+              <Avatar />
             </div>
             <input
               placeholder="What's happening?"
