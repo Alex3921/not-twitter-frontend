@@ -28,6 +28,7 @@ export const likePost = (postId) => {
       body: JSON.stringify({post_id: postId}),
     })
       .then((response) => response.json())
-      .then((data) => alert(data.message));
+      // .then((data) => alert(data.message));
+      .then((data) => console.log("likePost:", data));
   };
 };
